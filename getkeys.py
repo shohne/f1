@@ -12,5 +12,10 @@ def key_check():
     for key in keyList:
         if wapi.GetAsyncKeyState(ord(key)):
             keys.append(key)
+        if wapi.GetAsyncKeyState(0x25):
+            keys.append('LEFT')
+        if wapi.GetAsyncKeyState(0x27):
+            keys.append('RIGHT')
+
     return keys
  
